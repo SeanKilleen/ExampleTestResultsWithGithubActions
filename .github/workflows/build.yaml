@@ -36,7 +36,7 @@ jobs:
       - name: Test (with build/restore)
         run: dotnet test ExampleTestResultsWithGithubActions.sln --configuration Release --verbosity normal --logger trx --collect:"XPlat Code Coverage"
       - name: Combine Coverage Reports # This is because one report is produced per project, and we want one result for all of them.
-        uses: danielpalme/ReportGenerator-GitHub-Action@5.2.2
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.2.4
         with:
           reports: "**/*.cobertura.xml" # REQUIRED # The coverage reports that should be parsed (separated by semicolon). Globbing is supported.
           targetdir: "${{ github.workspace }}/CodeCoverage" # REQUIRED # The directory where the generated report should be saved.
@@ -71,7 +71,7 @@ jobs:
           path: ${{ github.workspace }}/**/TestResults/**/*
           retention-days: 5
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2.15.1
+        uses: EnricoMi/publish-unit-test-result-action@v2.16.1
         if: always()
         with:
           files: |
