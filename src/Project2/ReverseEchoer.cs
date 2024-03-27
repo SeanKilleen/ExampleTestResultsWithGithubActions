@@ -4,6 +4,8 @@ public class ReverseEchoer
 {
     public string Echo(string message)
     {
-        return message.Reverse().ToString() ?? string.Empty;
+        var charArray = message.ToCharArray();
+        Array.Reverse(charArray);
+        return new string(charArray);
     }
 }
