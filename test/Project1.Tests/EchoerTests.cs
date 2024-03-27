@@ -12,4 +12,16 @@ public class EchoerTests
 
         Assert.That(result, Is.EqualTo(theValue));
     }
+
+    [TestCase("ALLCAPS")]
+    [TestCase("alllower")]
+    [TestCase("MiXedCasE")]
+    public void WorksWithAllCases(string testString)
+    {
+        var sut = new Echoer();
+
+        var result = sut.Echo(testString);
+
+        Assert.That(result, Is.EqualTo(testString));
+    }
 }
