@@ -21,7 +21,7 @@ jobs:
     name: "Build & Test"
 
     # Permissions this GitHub Action needs for other things in GitHub
-    #permissions: write-all
+    permissions: write-all
 
     runs-on: ubuntu-latest
 
