@@ -22,6 +22,6 @@ public class EchoerTests
 
         var result = sut.Echo(testString);
 
-        Assert.That(result, Is.EqualTo(testString));
+        Assert.That(result, Is.Not.EqualTo(testString));
     }
 }
