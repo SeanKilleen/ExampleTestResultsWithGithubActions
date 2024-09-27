@@ -10,6 +10,6 @@ public class EchoerTests
         var theValue = "Hello!";
         var result = sut.Echo(theValue);
 
-        Assert.That(result, Is.EqualTo(theValue));
+        Assert.That(result, Is.EqualTo(theValue + "1"));
     }
 }
